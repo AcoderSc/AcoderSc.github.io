@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">archive_a | 似水流年i的个人博客</title>
+  <title itemprop="name">似水流年i的个人博客</title>
   
     <link rel="shortcut icon" href="/images/favorite.svg">
   
@@ -364,78 +364,340 @@
   </div>
 </header>
 
-      <div class="blank" style="padding-top: 75px;">
-</div>
+      <link rel="stylesheet" type="text/css" href="/css/sharejs.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+<div class="pattern-center-blank"></div>
+
 <div id="content" class="site-content">
-  <div id="main">
-    <header class="page-header">
-      <h1 class="cat-title">
-      归档</h1>
-      <span class="cat-des">
-        <p>
-        Archives</p>
-      </span>
-    </header>
-    <div id="main-part">
-      <article class="art">
-        <div class="art-main">
-          <div class="art-content">
-            <div id="archives">
-              <p style="text-align:right;">
-                [<span id="al_expand_collapse" style="cursor: s-resize;">
-                全部展开/收缩</span>
-              ]</p>
-              
-              
-              
-              
-              
-                
-                <h3 class="al_year">2022年</h3>
-              
-              
-                
-                <ul class="al_mon_list">
-                  <li class="al_li">
-                    <span class="al_mon" style="cursor: s-resize;">
-                      05月(<span id="post-num">
-                      3</span>
-                    篇文章)</span>
-                    <ul class="al_post_list" style="">
-              
-                      <li>
-                        <a href="/2022/05/03/first/">
-                          <span style="color:#0bf;">
-                          03日07:59:48</span>
-                          
-                        </a>
-                      </li>
-                      
-              
-              
-              
-              
-              
-                      <li>
-                        <a href="/2022/05/02/hello-world/">
-                          <span style="color:#0bf;">
-                          02日14:07:16</span>
-                          Hexo的部署和使用
-                        </a>
-                      </li>
-                      
-                    </ul>
-                  </li>
-                </ul>
-              
-              
+  <div id="primary" class="content-area">
+    <main id="main" class="site-main" role="main">
+      <article id="post-1" class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+        <div class="toc"></div>
+        <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
+        
+          <header class="entry-header">
+            <h1 class="entry-title"></h1>
+            <p class="entry-census">&nbsp;·&nbsp;2022-5-3&nbsp;·&nbsp;<span id="busuanzi_value_page_pv"></span>次阅读</p></p>
+
+            <hr>
+          </header>
+        
+        <div class="entry-content">
+          <h1 id="在linux集群服务器上部署hadoop"><a href="#在linux集群服务器上部署hadoop" class="headerlink" title="在linux集群服务器上部署hadoop"></a>在linux集群服务器上部署hadoop</h1><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@classname</span>: Main05</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span>: 杨鹏飞</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@date</span>: 2022-05-02 16:17</span></span><br><span class="line"><span class="comment"> **/</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Main05</span> {</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> {</span><br><span class="line">        <span class="type">Scanner</span> <span class="variable">sc</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Scanner</span>(System.in);</span><br><span class="line">        System.out.println(<span class="string">"输入第一个数："</span>);</span><br><span class="line">        <span class="type">int</span> <span class="variable">a</span> <span class="operator">=</span> sc.nextInt();</span><br><span class="line">        System.out.println(<span class="string">"输入第二个数："</span>);</span><br><span class="line">        <span class="type">int</span> <span class="variable">b</span> <span class="operator">=</span> sc.nextInt();</span><br><span class="line">        <span class="type">int</span> temp;</span><br><span class="line">        temp = a;</span><br><span class="line">        a = b;</span><br><span class="line">        b = temp;</span><br><span class="line">        System.out.println(<span class="string">"交换后的第一个数："</span> + a);</span><br><span class="line">        System.out.println(<span class="string">"交换后的第二个数："</span> + b);</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">}</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+
+
+
+<ol>
+<li><h2 id="配置基础环境"><a href="#配置基础环境" class="headerlink" title="配置基础环境"></a>配置基础环境</h2></li>
+</ol>
+<h3 id="1-1下载和安装jdk"><a href="#1-1下载和安装jdk" class="headerlink" title="1.1下载和安装jdk"></a>1.1下载和安装jdk</h3><p><img src="/" alt="首先需要卸载linux自带的Jdk和相关软件，使用命令：rpm -qa | grep -i java可查看当前linux系统中的jdk和与java相关的软件，"></p>
+<p><img src="file:///D:\Temp\ksohtml23776\wps1.jpg" alt="img"> </p>
+<p>使用rpm -e –nodeps + 文件名 可进行卸载</p>
+<p><img src="file:///D:\Temp\ksohtml23776\wps2.jpg" alt="img"> </p>
+<p><img src="file:///D:\Temp\ksohtml23776\wps3.jpg" alt="img"> </p>
+<p><img src="file:///D:\Temp\ksohtml23776\wps4.jpg" alt="img"> </p>
+<p>在usr目录下，创建java文件夹，发现该用户没有权限，使用sudo 命令</p>
+<p><img src="file:///D:\Temp\ksohtml23776\wps5.jpg" alt="img"> </p>
+<p><img src="file:///D:\Temp\ksohtml23776\wps6.jpg" alt="img"> </p>
+<p>将下载好的linux版本的jdk8 移动至该文件夹下，并进行解压。如下：使用使用WinScp上传文件至linux虚拟机，主机名是虚拟机的ip地址，可用ifconfig -a 命令查看。</p>
+<p><img src="file:///D:\Temp\ksohtml23776\wps7.jpg" alt="img"> </p>
+<p><img src="file:///D:\Temp\ksohtml23776\wps8.jpg" alt="img"> </p>
+<p><img src="file:///D:\Temp\ksohtml23776\wps9.jpg" alt="img"> </p>
+<p>完成上传后，使用sudo tar -zxvf jdk-8u181-linux-x64.tar.gz 进行解压，</p>
+<p><img src="file:///D:\Temp\ksohtml23776\wps10.jpg" alt="img"> </p>
+<p><img src="file:///D:\Temp\ksohtml23776\wps11.jpg" alt="img"> </p>
+<h3 id="1-2配置java环境变量"><a href="#1-2配置java环境变量" class="headerlink" title="1.2配置java环境变量"></a>1.2配置java环境变量</h3><p>使用 sudo vim /etc/profile 命令编辑文件</p>
+<p><img src="file:///D:\Temp\ksohtml23776\wps12.jpg" alt="img"> </p>
+<p>在文件中新增如下内容</p>
+<p>JAVA_HOME=/usr/java/jdk1.8.0_181</p>
+<p>JRE_HOME=/usr/java/jdk1.8.0_181/jre</p>
+<p>CLASS_PATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar:$JRE_HOME/lib</p>
+<p>PATH=$PATH:$JAVA_HOME/bin:$JRE_HOME/bin</p>
+<p>export JAVA_HOME JRE_HOME CLASS_PATH PATH</p>
+<p>之后键入:wq保存退出，使用source /etc/profile 命令使etc/profile修改后立即生效。</p>
+<p><img src="file:///D:\Temp\ksohtml23776\wps13.jpg" alt="img"> </p>
+<p>输入java -version，显示java版本信息，可见java环境变量配置成功。</p>
+<p><img src="file:///D:\Temp\ksohtml23776\wps14.jpg" alt="img"> </p>
+<p>1.3下载安装hadoop</p>
+<p>我下载的hadoop是来自清华的镜像：<a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/apache/hadoop/common/">Index of /apache/hadoop/common (tsinghua.edu.cn)</a> 版本是hadoop -3.2.3。</p>
+<p>同样，在usr目录下创建hadoop文件夹，将下载好的hadoop压缩包移动至该文件中，进行解压</p>
+<p>命令：sudo tar -zxvf hadoop-3.2.3.tar.gz </p>
+<p><img src="file:///D:\Temp\ksohtml23776\wps15.jpg" alt="img"> </p>
+<p>使用ls命令可查看解压后的文件，如下</p>
+<p><img src="file:///D:\Temp\ksohtml23776\wps16.jpg" alt="img"> </p>
+<p>1.4配置hadoop的环境变量</p>
+<p>命令：sudo vim /etc/profile，添加如下环境变量</p>
+<p>HADOOP_HOME=/usr/hadoop/hadoop-3.2.3</p>
+<p>export PATH=$PATH:$HADOOP_HOME/bin:$HADOOP_HOME</p>
+<p><img src="file:///D:\Temp\ksohtml23776\wps17.jpg" alt="img"> </p>
+<p>:wq，命令保存退出，输入hadoop version可见hadoop的环境变量配置成功！</p>
+<p><img src="file:///D:\Temp\ksohtml23776\wps18.jpg" alt="img"> </p>
+<p>1.5将hadoop和java绑定</p>
+<p>编辑hadoop-env.sh配置文件，hadoop-env.sh 位于：/usr/hadoop/hadoop-3.2.3/etc/hadoop路径下，</p>
+<p>修改：JAVA_HOME=/usr/java/jdk1.8.0_181。保存退出</p>
+<p><img src="file:///D:\Temp\ksohtml23776\wps19.jpg" alt="img">	<img src="file:///D:\Temp\ksohtml23776\wps20.jpg" alt="img"></p>
+<p>1.6配置hosts列表和修改主机名。</p>
+<p>hosts 列表作用是让集群中的每台服务器彼此都知道对方的主机名和 ip 地址。</p>
+<p>可使用hostnamectl set-hostname master命令修改当前虚拟机的主机名。</p>
+<p><img src="file:///D:\Temp\ksohtml23776\wps21.jpg" alt="img"> </p>
+<p>root模式下 vim /etc/hosts ，添加主机名和ip。</p>
+<p><img src="file:///D:\Temp\ksohtml23776\wps22.jpg" alt="img"> </p>
+<p>其他的四台从属服务器，会在之后进行配置。</p>
+<p>1.7关闭和禁用防火墙</p>
+<p><img src="file:///D:\Temp\ksohtml23776\wps23.jpg" alt="img"> </p>
+<p>关闭防火墙后我们可以在本机访问虚拟机的端口。</p>
+<p>2.hadoop核心文件配置</p>
+<p>2.1配置core-site.xml文件</p>
+<p>命令：sudo vim /usr/hadoop/hadoop-3.2.3/etc/hadoop/core-site.xml</p>
+<p><img src="file:///D:\Temp\ksohtml23776\wps24.jpg" alt="img"> </p>
+<p>在configuration标签中增加如下配置，之后保存退出</p>
+<p>​		<img src="file:///D:\Temp\ksohtml23776\wps25.jpg" alt="img"></p>
+<p>2.2配置hdfs-site.xml文件</p>
+<p>命令：sudo vim /usr/hadoop/hadoop-3.2.3/etc/hadoop/hdfs-site.xml </p>
+<p><img src="file:///D:\Temp\ksohtml23776\wps26.jpg" alt="img"> </p>
+<p>新增如下配置，保存退出。</p>
+<p><img src="file:///D:\Temp\ksohtml23776\wps27.jpg" alt="img"> </p>
+<p>2.3修改yarn-env.sh文件</p>
+<p>命令：sudo vim /usr/hadoop/hadoop-3.2.3/etc/hadoop/yarn-env.sh</p>
+<p>修改yarn的java环境变量。如下：</p>
+<p><img src="file:///D:\Temp\ksohtml23776\wps28.jpg" alt="img"> </p>
+<p>2.4配置yarn-site.xml文件</p>
+<p>命令：sudo vim /usr/hadoop/hadoop-3.2.3/etc/hadoop/yarn-site.xml</p>
+<p>增加如下配置，保存退出。</p>
+<p><img src="file:///D:\Temp\ksohtml23776\wps29.jpg" alt="img"> </p>
+<p>2.5配置mapred-site.xml文件：</p>
+<p>vim /usr/hadoop/hadoop-3.2.3/etc/hadoop/mapred-site.xml</p>
+<p>添加如下配置，保存退出。</p>
+<p><img src="file:///D:\Temp\ksohtml23776\wps30.jpg" alt="img"> </p>
+<p>2.6修改workers文件</p>
+<p>vim /usr/hadoop/hadoop-3.2.3/etc/hadoop/workers</p>
+<p>删除原文件内容，添加从属的服务器主机名。</p>
+<p><img src="file:///D:\Temp\ksohtml23776\wps31.jpg" alt="img"> </p>
+<p>3.添加配置其他从属服务器</p>
+<p>3.1克隆四台虚拟机</p>
+<p>将master虚拟机关机，选中右键，管理中选择克隆，</p>
+<p><img src="file:///D:\Temp\ksohtml23776\wps32.jpg" alt="img"> </p>
+<p><img src="file:///D:\Temp\ksohtml23776\wps33.jpg" alt="img"> </p>
+<p><img src="file:///D:\Temp\ksohtml23776\wps34.jpg" alt="img"> </p>
+<p><img src="file:///D:\Temp\ksohtml23776\wps35.jpg" alt="img"> </p>
+<p>完成即可，同样的操作克隆出linux01、linux03、 linux04，如下：</p>
+<p>  <img src="file:///D:\Temp\ksohtml23776\wps36.jpg" alt="img"></p>
+<p>至此，我们已经创建好了五台虚拟机。</p>
+<p>3.2配置其他四台虚拟机</p>
+<p>由于我们克隆的虚拟机的所有配置都是和master主机是一样的，所以，我们需要进行配置。</p>
+<p>使用，hostnamectl set-hostname + 主机名 命令，修改其他四台虚拟机的主机名。之后在每台虚拟机的/etc/hosts文件中添加如下内容。</p>
+<p><img src="file:///D:\Temp\ksohtml23776\wps37.jpg" alt="img"> </p>
+<p>最后 五台虚拟机的ip地址和主机对应如下：</p>
+<table>
+<thead>
+<tr>
+<th>主机名</th>
+<th>Ip</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Master（主）</td>
+<td>192.168.28.139</td>
+</tr>
+<tr>
+<td>Linux01</td>
+<td>192.168.28.140</td>
+</tr>
+<tr>
+<td>Linux02</td>
+<td>192.168.28.141</td>
+</tr>
+<tr>
+<td>Linux03</td>
+<td>192.168.28.142</td>
+</tr>
+<tr>
+<td>Linux04</td>
+<td>192.168.28.143</td>
+</tr>
+</tbody></table>
+<p>配置完成后，可以使用master主机 ping一下其他的主机名，可见都可以ping通，主机间可以进行通信！</p>
+<p><img src="file:///D:\Temp\ksohtml23776\wps38.jpg" alt="img"> </p>
+<p>\4. 配置ssh免密登录</p>
+<p>4.1在master主机上生成公钥和私钥</p>
+<p>使用命令：ssh-keygen -t rsa 产生公钥和私钥。</p>
+<p><img src="file:///D:\Temp\ksohtml23776\wps39.jpg" alt="img"> </p>
+<p>4.2向每个从属服务器发送公钥</p>
+<p>在master上创建一个通用的公钥，authorized_keys，修改 authorized_keys 权限，并发送给每个从属服务器</p>
+<p><img src="file:///D:\Temp\ksohtml23776\wps40.jpg" alt="img"> </p>
+<p>至此，master已经成功将公钥发送给每个从属服务器。</p>
+<p>4.3设置免密登录</p>
+<p>现在可以使用master免密登录到其他linux从属服务器，如下：</p>
+<p><img src="file:///D:\Temp\ksohtml23776\wps41.jpg" alt="img"> </p>
+<p>\5. 运行hadoop</p>
+<p>5.1格式化hdfs </p>
+<p>进入hadoop的bin目录，使用命令：hdfs namenode -format </p>
+<p><img src="file:///D:\Temp\ksohtml23776\wps42.jpg" alt="img"> </p>
+<p>5.2启动和关闭hadoop</p>
+<p> 进入hadoop中的sbin文件夹下，使用命令：./start-all.sh可启动hadoop，使用jps命令可查看hadoop进程，此外，启动命令可以使用start-all.sh，也可以分别使用start-dfs.sh与start-yarn.sh这两个命令，start-all.sh命令是同时启用两服务。如下：</p>
+<p><img src="file:///D:\Temp\ksohtml23776\wps43.jpg" alt="img"> </p>
+<p>至此，hadoop集群部署已经完毕，我们可以在本地访问相关端口进行访问。</p>
+<p><a href="master:9870">master:9870</a> 成功访问到HDFS NAMENODE界面</p>
+<p><img src="file:///D:\Temp\ksohtml23776\wps44.jpg" alt="img"> </p>
+<p><img src="file:///D:\Temp\ksohtml23776\wps45.jpg" alt="img"> </p>
+<p><a href="master:9864">master:9864</a>是HDFS DataNode界面如下：</p>
+<p><img src="file:///D:\Temp\ksohtml23776\wps46.jpg" alt="img"> </p>
+<p><a href="master:8088">master:8088</a> 访问YARN界面</p>
+<p><img src="file:///D:\Temp\ksohtml23776\wps47.jpg" alt="img"> </p>
+<p>我们可以看到配置的master以及从属服务器信息，如下。</p>
+<p><img src="file:///D:\Temp\ksohtml23776\wps48.jpg" alt="img"> </p>
+<p>最后可以用在sbin目录下用：./stop-all.sh命令关闭hadoop</p>
+<p><img src="file:///D:\Temp\ksohtml23776\wps49.jpg" alt="img"> </p>
+<p>\6. 安装中遇到的问题及解决方案</p>
+<p>6.1解压压缩包问题</p>
+<p>解压压缩包要使用su命令进入root用户，或者使用sudo tar -zxvf + 压缩包名。在解压jdk和hadoop都遇到了此问题，原因是当前用户没有文件读写权限。</p>
+<p><img src="file:///D:\Temp\ksohtml23776\wps50.jpg" alt="img"> </p>
+<p>6.2编辑文件问题</p>
+<p>在配置环境变量，修改etc/profile文件时，也要使用root用户或sudo vim + 文件名的命令，否则会无法保存，报错 E212: Can‘t open file for writing，当前用户没有编辑权限。</p>
+<p>6.3初始化hadoop节点报错</p>
+<p><img src="file:///D:\Temp\ksohtml23776\wps51.jpg" alt="img"> </p>
+<p>原因是没有文件读写权限，使用命令：sudo chmod -R a+w /usr/hadoop/ 修改文件夹权限。</p>
+<p><img src="file:///D:\Temp\ksohtml23776\wps52.jpg" alt="img"> </p>
+<p>6.4启动hadoop命令报错</p>
+<p>进入到hadoop的sbin目录下使用start-all.sh，报错：</p>
+<p><img src="file:///D:\Temp\ksohtml23776\wps53.jpg" alt="img"> </p>
+<p>原因是hadoop的环境变量没配置全，需要将sbin也添加至环境变量中。打开编辑etc/profile文件，添加如下内容：</p>
+<p><img src="file:///D:\Temp\ksohtml23776\wps54.jpg" alt="img"> </p>
+<p>6.5启动hadoop报错</p>
+<p>在成功使用命令启动hadoop后，出现如下错误信息。意思时需要使用root作为NameNode。</p>
+<p><img src="file:///D:\Temp\ksohtml23776\wps55.jpg" alt="img"> </p>
+<p>解决方案：</p>
+<p>vim /usr/hadoop/hadoop-3.2.3/sbin/start-dfs.sh和stop-dfs.sh添加如下内容</p>
+<p><img src="file:///D:\Temp\ksohtml23776\wps56.jpg" alt="img"> </p>
+<p>vim /usr/hadoop/hadoop-3.2.3/sbin/start-yarn.sh和stop-yarn.sh，添加如下内容</p>
+<p><img src="file:///D:\Temp\ksohtml23776\wps57.jpg" alt="img"> </p>
+<p>6.5未设置免密登录错误</p>
+<p>未设置主从服务器之间免密登录，在启动hadoop会报如下错误： <img src="file:///D:\Temp\ksohtml23776\wps58.jpg" alt="img"></p>
+<p>原因是因为主从服务器没有设置免密登录，主从服务器公钥不匹配。设置ssh免密登录可以减少每次登录主机输入密码的繁琐流程。具体配置可参照上述流程。</p>
+<p>6.6 workers文件问题</p>
+<p>由于我使用的是hadoop3,hadoop2配置从属服务器的文件名是slaves，但hadoop3发生了改变，改为了workers，所以，我在启动Hadoop访问8088端口时，只看到了master数据节点，其他数据节点没有启动。只需使用命令vim /usr/hadoop/hadoop-3.2.3/etc/hadoop/workers编辑workers文件，添加其他四台主机名即可，具体操作参考上述步骤。</p>
+<p>6.7 启动hadoop访问9870端口，发现缺少节点信息</p>
+<p>原本是四台从属服务器，但只显示了三台。如下：</p>
+<p><img src="file:///D:\Temp\ksohtml23776\wps59.jpg" alt="img"> </p>
+<p>解决方案：</p>
+<p>修改各虚拟机的hosts文件，如下：</p>
+<p><img src="file:///D:\Temp\ksohtml23776\wps60.jpg" alt="img"> </p>
+<p>或者可能是各个数据节点的文件名冲突，使用命令sudo vim /usr/hadoop/hadoop-3.2.3/etc/hadoop/hdfs-site.xml，修改各虚拟机的配置数据节点目录，如下：</p>
+<p><img src="file:///D:\Temp\ksohtml23776\wps61.jpg" alt="img"> </p>
+<p><img src="file:///D:\Temp\ksohtml23776\wps62.jpg" alt="img"> </p>
+<p><img src="file:///D:\Temp\ksohtml23776\wps63.jpg" alt="img"> </p>
+<p><img src="file:///D:\Temp\ksohtml23776\wps64.jpg" alt="img">	<img src="file:///D:\Temp\ksohtml23776\wps65.jpg" alt="img"></p>
+<p>之后重新启动hadoop，所有节点均可正常显示。</p>
+
+        </div>
+        <!-- .entry-content -->
+        <div class="single-reward">
+          <div class="reward-open">赏
+            <div class="reward-main">
+              <ul class="reward-row">
+                <li class="alipay-code"><img src="/img/custom/donate/AliPayQR.jpg"></li>
+                <li class="wechat-code"><img src="/img/custom/donate/WeChanQR.jpg"></li>
+              </ul>
             </div>
           </div>
         </div>
+        <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent"></div>
+        <footer class="post-footer">
+          <div class="post-lincenses"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow"><i class="fa fa-creative-commons" aria-hidden="true"></i> 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a></div>
+          <div class="post-tags">
+          </div>
+          <div class="post-share">
+            <div class="social-share sharehidden share-component"></div>
+            <i class="iconfont show-share icon-forward"></i>
+          </div>
+        </footer><!-- .entry-footer -->
       </article>
-    </div>
-  </div>
+      <!-- #post-## -->
+      <div class="toc" style="background: none;"></div>
+      <section class="post-squares nextprev">
+        
+        
+          
+            <div class="post-nepre full next">
+          
+            <a href="/2022/05/02/hello-world/" rel="next">
+              <div class="background">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="">
+              </div>
+              <span class="label">
+              Next Post</span>
+              <div class="info">
+                <h3>
+                Hexo的部署和使用</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+      </section>
+      
+<div id="vcomments"></div>
+<script>
+  window.onload = function(){
+      var valine = new Valine();
+      valine.init({
+        el: '#vcomments',
+        appId: "GyC3NzMvd0hT9Yyd2hYIC0MN-gzGzoHsz",
+        appKey: "mgOpfzbkHYqU92CV4IDlAUHQ",
+        path: window.location.pathname,
+        placeholder: "你是我一生只会遇见一次的惊喜 ..."
+      })
+  }
+</script>
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/@waline/client"></script>
+    <div id="waline"></div>
+    <style>
+    #waline textarea {
+        box-sizing: border-box;
+        background: url("https://gitee.com/cungudafa/source/raw/master/img/gif/Sitich/Sitich2.gif") 100% 100% no-repeat;
+    }
+    </style>
+    <script>
+        Waline({
+              el: '#waline',
+              serverURL: '',
+              pageSize: '10',
+              lang: 'en',
+              requiredFields: ['nick','mail'], //设置必填项
+              placeholder: '祝开开心心！',
+              visitor: 'true',
+              emoji: [
+                  'https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/tieba',
+                  'https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/bilibili',
+                  'https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/weibo',
+              ],
+              avatar: 'mp',
+              dark: 'auto',
+            });
+    </script>
+
+
+      <section class="author-profile">
+        <div class="info" itemprop="author" itemscope="" itemtype="https://schema.org/Person">
+          <a href="" class="profile gravatar"><img src="" itemprop="image" alt="" height="70" width="70"></a>
+          <div class="meta">
+            <span class="title">Author</span>
+            <h3 itemprop="name">
+            <a href="" itemprop="url" rel="author"></a>
+            </h3>
+          </div>
+        </div>
+        <hr>
+        <p><i class="iconfont icon-write"></i></p>
+      </section>
+    </main><!-- #main -->
+  </div><!-- #primary -->
 </div>
+
+
 
     </div>    
     <div class="ins-search">
